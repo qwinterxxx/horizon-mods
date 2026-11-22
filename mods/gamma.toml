@@ -1,14 +1,15 @@
 id = "gamma"
 kind = "native-mod"
 name = "Gamma"
-summary = "Ultra-lightweight Gamma toggle between 100% and 1500%."
+summary = "Ultra-lightweight Gamma boost toggle (1500%) that preserves options.txt."
 description = """
-Ultra-lightweight native Gamma mod for Horizon that toggles brightness between 100% and 1500%.
+Ultra-lightweight native Gamma mod for Horizon that toggles render brightness boost (`1500%`) without modifying saved `options.txt`.
 
-- Press **G** (rebindable in **Options > Controls**) to toggle between 100% and 1500% gamma with a brief status message.
+- Press **G** (rebindable in **Options > Controls**) to toggle the `1500%` gamma boost on or off with a brief status message.
 - Can also be toggled in **Options > Mods > Gamma**.
-- Respects Horizon's external-server fullbright restriction (`fullbright_held`): leaves normal vanilla brightness intact on external servers and LAN guest sessions while staying active in singleplayer, hosted LAN worlds, and Replay Studio.
-- Performs zero allocations on idle frames and updates settings and renderer state only when the gamma state changes.
+- Writes only to `renderer.gamma`, leaving `settings.gamma` (`options.txt`) untouched: your configured brightness survives options saves while boosted, disabling boost restores your exact configured brightness, and removing the mod leaves zero stale `1500%` values in `options.txt`.
+- Respects Horizon's external-server fullbright restriction (`fullbright_held`): leaves normal brightness intact on external servers and LAN guest sessions while staying active in singleplayer, hosted LAN worlds, and Replay Studio.
+- Zero allocations on idle frames.
 - Pinned to Horizon Nightly `2026-11-20` (`0a875da91dbb0fdcb7ba8c42c11341aa229af51a`) and `horizon-mixins` `e59da9094f0c2fdda6c627fe9eff22dec6a906f0`.
 """
 authors = ["qwinterx"]
@@ -20,7 +21,18 @@ icon = "icons/gamma.png"
 categories = ["utility"]
 tags = ["gamma", "brightness", "fullbright", "utility"]
 key = "RWQjqg8rypRO1FcAIBc+P7vxdFaU1fjCss8evaMaYSBDL21Fy12PGnH8"
-
+[[versions]]
+version = "1.0.2"
+published = "2026-11-22"
+game = "26.3"
+file = "gamma-1.0.2.hmod"
+sha256 = "b8dc1cffaca740f80e6768fa289702a4f24d5a3dbdb2c608c79171c9d72fc2be"
+signature = """
+untrusted comment: signature from minisign secret key
+RUQjqg8rypRO1EWzMJlg+cvhB4HzZKc9rUGR/1qs2Jy3xuD3Bts4Er9nJBQjONBloHDiq1Yhragt+7kx4azM5hz2LioDNYlmewk=
+trusted comment: timestamp:1795334426	file:gamma-1.0.2.hmod	hashed
+ssXT43RhOG2UBTGno8SbIJWLOF+lbhA1wxSktgDjQaF9c6UFD68bImjM1lA+dz5bMXqP5j4gjZnpr4ect5pwAQ=="""
+changelog = "Write boost strictly to renderer.gamma without touching settings.gamma/options.txt, and restore the player's configured brightness when turning boost off."
 [[versions]]
 version = "1.0.1"
 published = "2026-11-21"
