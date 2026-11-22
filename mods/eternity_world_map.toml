@@ -1,0 +1,43 @@
+id = "eternity_world_map"
+kind = "native-mod"
+name = "Eternity world map"
+summary = "Zero-overhead native minimap, persistent fullscreen World Map (M), Cave Mode, 2.5D mob radar, and 3D waypoints."
+description = """
+Zero-overhead native minimap, persistent fullscreen World Map, Cave Mode, 2.5D mob head radar, and interactive 3D/radar waypoints written in Rust for Horizon (Minecraft `26.3`).
+
+- **Minimap HUD**: Square and smooth Round shapes, adjustable size (`64–256 px`), zoom, corner placement, and player rotation lock.
+- **Fullscreen World Map (`M`)**: Multi-tier mip-pyramid (`1:1`, `2:1`, `4:1`, `8:1`) eliminates zoom-out blur; includes background `512x512` area scan, chunk grid toggle, cursor biome/coordinate readout, and right-click menu (`Teleport`, `Copy coords`, `New waypoint`).
+- **Cave Mode**: Auto/Manual/Off switcher bar with Y-slice slider (`-64..320`), pure black void outside caverns, roof-verified scanning so open surface terrain never bleeds in, and smooth Y transitions.
+- **2.5D Mob & Player Radar**: Compact diamonds by default; hold `Tab` to render multi-layer vanilla mob heads (snouts, beaks, noses, ears, horns, emissive eye overlays, and baby sizing) and player skins.
+- **Waypoints**: Click any coordinate on the World Map or press `B` to create named color waypoints with in-world 3D beams, minimap rim clamping, and optional auto Death waypoints.
+
+Client-side only; zero network access and zero world mutations.
+
+- Pinned to Horizon Nightly `2026-11-20` (`0a875da91dbb0fdcb7ba8c42c11341aa229af51a`) and `horizon-mixins` `e59da9094f0c2fdda6c627fe9eff22dec6a906f0`.
+"""
+authors = ["qwinterx"]
+owners = ["qwinterxxx"]
+owner_ids = [250209679]
+license = "MIT"
+source = "https://github.com/qwinterxxx/horizon-eternity-world-map"
+icon = "icons/eternity_world_map.png"
+categories = ["utility", "management"]
+tags = ["minimap", "worldmap", "waypoints", "map", "cavemode", "radar"]
+screenshots = [
+  "screenshots/eternity_world_map/01-minimap-radar.png",
+  "screenshots/eternity_world_map/02-world-map-cave-mode.png",
+]
+key = "RWQjqg8rypRO1FcAIBc+P7vxdFaU1fjCss8evaMaYSBDL21Fy12PGnH8"
+
+[[versions]]
+version = "0.1.0"
+published = "2026-11-22"
+game = "26.3"
+file = "eternity_world_map-0.1.0.hmod"
+sha256 = "4501e9b9bd43a7cccaaf514143ce1ad8f09ccd2a43714c12dc327aa95cbfffb1"
+signature = """
+untrusted comment: signature from minisign secret key
+RUQjqg8rypRO1NRAdFDOoUEqzoIzMVSCzF/FId8bTQb6x65yArewoyiwRYA5TdFUSOnKsoBHOcJWnMd8isgywSGhGPgOlOfa8AA=
+trusted comment: timestamp:1795348843	file:eternity_world_map-0.1.0.hmod	hashed
+Ou/AUt8wOuXI532tmGl3NUj4gsvBsqeO56WsIgzw61lopwMZgxsBB0OMlRkwydYNrqrYKs+uR4VeqPXbDbspDA=="""
+changelog = "Initial release of Eternity world map for Horizon Nightly 2026-11-20 (0a875da91dbb0fdcb7ba8c42c11341aa229af51a)."
