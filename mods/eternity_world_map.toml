@@ -6,12 +6,12 @@ description = """
 Zero-overhead native minimap, persistent fullscreen World Map, Cave Mode, 2.5D mob head radar, and interactive 3D/radar waypoints written in Rust for Horizon (Minecraft `26.3`).
 
 - **Minimap HUD**: Square and smooth Round shapes, adjustable size (`64–256 px`), zoom, corner placement, and player rotation lock.
-- **Fullscreen World Map (`M`)**: Multi-tier mip-pyramid (`1:1`, `2:1`, `4:1`, `8:1`) eliminates zoom-out blur; includes background `512x512` area scan, chunk grid toggle, cursor biome/coordinate readout, and right-click menu (`Teleport`, `Copy coords`, `New waypoint`).
+- **Fullscreen World Map (`M`)**: Multi-tier mip-pyramid (`1:1`, `2:1`, `4:1`, `8:1`) eliminates zoom-out blur; includes background `512x512` area preload (in single-player, samples local world generation to reveal unexplored terrain around the target area; on servers, rescans loaded chunks), chunk grid toggle, cursor biome/coordinate readout, and right-click menu (`Teleport Here` sends `/tp <x> <y> <z>`, `Copy coords`, `New waypoint`).
 - **Cave Mode**: Auto/Manual/Off switcher bar with Y-slice slider (`-64..320`), pure black void outside caverns, roof-verified scanning so open surface terrain never bleeds in, and smooth Y transitions.
 - **2.5D Mob & Player Radar**: Compact diamonds by default; hold `Tab` to render multi-layer vanilla mob heads (snouts, beaks, noses, ears, horns, emissive eye overlays, and baby sizing) and player skins.
 - **Waypoints**: Click any coordinate on the World Map or press `B` to create named color waypoints with in-world 3D beams, minimap rim clamping, and optional auto Death waypoints.
 
-Client-side only; zero network access and zero world mutations.
+Client-side only with zero external network access. Passive map, radar, and waypoint rendering does not mutate world state; right-click **Teleport** sends a standard `/tp` chat command when invoked.
 
 - Pinned to Horizon Nightly `2026-11-20` (`0a875da91dbb0fdcb7ba8c42c11341aa229af51a`) and `horizon-mixins` `e59da9094f0c2fdda6c627fe9eff22dec6a906f0`.
 """
@@ -28,6 +28,19 @@ screenshots = [
   "screenshots/eternity_world_map/02-world-map-cave-mode.png",
 ]
 key = "RWQjqg8rypRO1FcAIBc+P7vxdFaU1fjCss8evaMaYSBDL21Fy12PGnH8"
+
+[[versions]]
+version = "0.1.1"
+published = "2026-11-22"
+game = "26.3"
+file = "eternity_world_map-0.1.1.hmod"
+sha256 = "beb672d1aea39bff70dcdf757a81a9181850839a54a42be1e36c86b0465072f9"
+signature = """
+untrusted comment: signature from minisign secret key
+RUQjqg8rypRO1JqMK1Kzm4StPnDtHbpkM3klXXZOihWxxf2aOuKRSrfw1O1Gc/l8O2Px9UZ3olwu1RTGTapWqOi4pdM0DSJ+Mgw=
+trusted comment: timestamp:1795358473	file:eternity_world_map-0.1.1.hmod	hashed
+ao3lyl4p8HWZLFdXaz1RGM+Hi0onatmI+7BzYTY1xO4SpIaQkkMojiLaKUBrH2gHaTdVUjMmKQDFy3DvbcDKBw=="""
+changelog = "Isolate per-world singleplayer map/waypoint storage by checking game.integrated before game.remote, prevent non-ASCII world folder path collisions, and clarify /tp Teleport and singleplayer unexplored-terrain preload in documentation."
 
 [[versions]]
 version = "0.1.0"
