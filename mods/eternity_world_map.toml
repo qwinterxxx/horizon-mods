@@ -34,12 +34,12 @@ version = "0.1.2"
 published = "2026-11-23"
 game = "26.3"
 file = "eternity_world_map-0.1.2.hmod"
-sha256 = "859c221c372f3b38197a02d6756dd082cd58a049846a06f7d9dfb6e8035f82e7"
+sha256 = "f8c6e12376b57074c22501bdfbd19d53cd7db44880051c37e020c9c481477fb0"
 signature = """
 untrusted comment: signature from minisign secret key
-RUQjqg8rypRO1OkO6viBGCdm9YBe1ckcvBctD6o9gejSTb3sDEyKZe2gwhevH49uOoHU2igjLxPckFgMhAPc5uB9wREU0apFgwE=
-trusted comment: timestamp:1795412838	file:eternity_world_map-0.1.2.hmod	hashed
-1kuWu4Cy6hX73oPLZ0CPfW2LH//4yKhtxpY/YCp7xg46emx+tbysySdADyud4zRu4eGL4rohCeYnz6fFiqi5DA==
+RUQjqg8rypRO1No6usA2iVr0bOkBAar6Zh92nYr9bDY5yAAsSXhyEHyOBJ2lwk+WR+OPYFM5OR+Bkm3AP/mT2VYexuXRHvXwvQY=
+trusted comment: timestamp:1795439050	file:eternity_world_map-0.1.2.hmod	hashed
+mQVxY94DaFYFwlUrQhl6rq6xir0p8WTRzEaOZNl6L1ZPhLlzFuxKsH2311RTGGEP2yfyu3B4Ke4LwnhLVC8pAw==
 """
 
 [[versions]]
